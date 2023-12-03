@@ -13,12 +13,17 @@ pub fn add(left: usize, right: usize) -> usize {
 /*
     input is which day / test
 */
-pub fn input_to_vec(input: &str) -> Vec<String> {
-    println!("reading file: {}" , input);
+pub fn input_to_vec(input: &str, verbose: bool) -> Vec<String> {
+    if verbose {
+        println!("reading file: {}" , input);
+    }
     
     let mut file_vec : Vec<String> = Vec::new();
     
     for line in fs::read_to_string(input).unwrap().lines() {
+        if verbose{
+            println!("{}", line);
+        }
         file_vec.push(line.to_string());
     }
 

@@ -8,15 +8,9 @@ fn main() {
     println!("Hello, world!");
     let path = helpers::abs_path() + "/inputs/in";
     println!("path: {}", path);
-    let problem : Vec<String> = helpers::input_to_vec(&path);
-
-    // for line in &problem {
-    //     println!("{}", line);
-    // }
-
+    let problem : Vec<String> = helpers::input_to_vec(&path, false);
     println!("part a: {}", part_a(&problem));
     println!("part b: {}", part_b(&problem));
-
 }
 
 fn part_a(problem : &[String]) -> i32{
@@ -39,9 +33,7 @@ fn part_a(problem : &[String]) -> i32{
                 break;
             }
         }
-
         sum += cur_sum;
-
     }
 
     return sum;
@@ -54,7 +46,6 @@ fn part_b(problem : &[String]) -> i32{
     for line in problem {
 
         let mut cur_sum = 0;
-
 
         let mut i = 0;
         let line_arr : Vec<char> = line.chars().collect();
@@ -100,7 +91,6 @@ fn part_b(problem : &[String]) -> i32{
     return sum;
 
 }
-
 
 fn spelled_number(chars : &[char]) -> i32 {
     let as_string : String = String::from_iter(chars);
