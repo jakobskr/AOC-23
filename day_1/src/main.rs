@@ -16,7 +16,7 @@ fn main() {
 fn part_a(problem : &[String]) -> i32{
     let mut sum : i32 = 0;
     
-    for line in problem {
+    for line  in problem {
 
         let mut cur_sum = 0;
 
