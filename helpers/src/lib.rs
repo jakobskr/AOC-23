@@ -2,7 +2,6 @@ use std::{fs};
 use std::env::current_dir;
 
 pub fn abs_path() -> String {
-    
     return current_dir().unwrap().into_os_string().into_string().unwrap().to_string();
 }
 

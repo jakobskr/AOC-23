@@ -1,11 +1,6 @@
-use std::{path::Path};
 
 extern crate helpers;
-
-
-// Real file
 fn main() {
-    println!("Hello, world!");
     let path = helpers::abs_path() + "/inputs/in";
     println!("path: {}", path);
     let problem : Vec<String> = helpers::input_to_vec(&path, false);
@@ -68,7 +63,7 @@ fn part_b(problem : &[String]) -> i32{
 
         i = line_arr.len()-1;
 
-        while i >= 0 {
+        while i as i32 >= 0 {
             let c = line_arr[i];
             
             if c.is_numeric() {
